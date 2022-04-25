@@ -30,7 +30,7 @@ function Sponsors({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
+    const observer = new IntersectionObserver(callbackFunction(), options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 

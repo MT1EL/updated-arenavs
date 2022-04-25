@@ -16,7 +16,6 @@ function Tokenomics({ setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
     const [entry] = entries;
-    console.log(entry);
     if (entry.boundingClientRect.top > 0) {
       setSelected("TOKENOMICS");
     }
@@ -31,7 +30,7 @@ function Tokenomics({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
+    const observer = new IntersectionObserver(callbackFunction(), options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 

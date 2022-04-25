@@ -28,7 +28,12 @@ function News() {
         {newsData.map((item, index) => {
           return (
             <div key={index} className="s">
-              <a href={item.link} target="_blank" className="s">
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="s"
+              >
                 <img src={item.image} alt="news" className="nImage" />
                 <h3>{item.text}</h3>
                 <h5 className="read__more">Read more</h5>

@@ -60,14 +60,3 @@ function Navbar({ isVisible, selected, setSelected }) {
 }
 
 export default Navbar;
-
-{
-  /* <li
-                className={
-                  selected === item.link
-                    ? "link linkTag selected"
-                    : "link linkTag"
-                }
-                onClick={() => handleClick(item)}
-              ></li> */
-}
