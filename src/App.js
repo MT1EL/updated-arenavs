@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Roadmap from "./components/roadmap/Roadmap";
+import Tokenomics from "./components/tokenomics/Tokenomics";
+import Team from "./components/team/Team";
+import Advisors from "./components/advisors/Advisors";
+import Sponsors from "./components/sponsors/Sponsors";
+import Footer from "./components/Footer";
+import { useState } from "react";
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [selected, setSelected] = useState("HOME");
+  console.log(selected);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" isVisible={isVisible}>
+      <Navbar
+        isVisible={isVisible}
+        selected={selected}
+        setSelected={setSelected}
+      />
+      <Home setIsVisible={setIsVisible} setSelected={setSelected} />
+      <About setSelected={setSelected} />
+      <Roadmap setSelected={setSelected} />
+      <Tokenomics setSelected={setSelected} />
+      <Team setSelected={setSelected} />
+      <Advisors setSelected={setSelected} />
+      <Sponsors setSelected={setSelected} />
+      <Footer setSelected={setSelected} />
     </div>
   );
 }
