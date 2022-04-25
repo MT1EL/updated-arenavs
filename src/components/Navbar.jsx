@@ -36,6 +36,7 @@ function Navbar({ isVisible, selected, setSelected }) {
                     ? "_blank"
                     : "_top"
                 }
+                rel="noreferrer"
                 onClick={() => handleClick(item)}
               >
                 {item.link}

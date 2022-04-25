@@ -47,6 +47,7 @@ function Footer({ setSelected }) {
             <a
               href="https://apps.apple.com/us/app/arena-master/id1527871139"
               target="_blank"
+              rel="noreferrer"
               className="appleStore"
             >
               <img src="https://arenavs.com/images/ml1.png" alt="apple store" />
@@ -54,6 +55,7 @@ function Footer({ setSelected }) {
             <a
               href="https://play.google.com/store/apps/details?id=com.Sambrela.ArenaMaster&hl=en&gl=US"
               target="_blank"
+              rel="noreferrer"
               className="appStore"
             >
               <img src="https://arenavs.com/images/ml2.png" alt="app store" />
@@ -66,23 +68,40 @@ function Footer({ setSelected }) {
             <a
               href="https://www.reddit.com/user/ArenaMasterToken"
               target="_blank"
+              rel="noreferrer"
             >
               {" "}
               <FontAwesomeIcon icon={faReddit} className="brandIcons" />
             </a>
-            <a href="https://t.me/ArenaMasters" target="_blank">
+            <a
+              href="https://t.me/ArenaMasters"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <FontAwesomeIcon icon={faTelegram} className="brandIcons" />
             </a>
-            <a href="https://twitter.com/arenamastergame" target="_blank">
+            <a
+              href="https://twitter.com/arenamastergame"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <FontAwesomeIcon icon={faTwitter} className="brandIcons" />
             </a>
-            <a href="https://discord.com/invite/9U72nUJDAM" target="_blank">
+            <a
+              href="https://discord.com/invite/9U72nUJDAM"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <FontAwesomeIcon icon={faDiscord} className="brandIcons" />
             </a>
-            <a href="https://medium.com/@ArenaMasterGame" target="_blank">
+            <a
+              href="https://medium.com/@ArenaMasterGame"
+              target="_blank"
+              rel="noreferrer"
+            >
               {" "}
               <FontAwesomeIcon icon={faMedium} className="brandIcons" />
             </a>

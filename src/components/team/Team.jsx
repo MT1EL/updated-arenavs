@@ -43,7 +43,12 @@ function Team({ setSelected }) {
             data-aos-delay={index * 100}
           >
             <div className="Team__image">
-              <a href={item.link} target="_blank" className="linkedinLink">
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="linkedinLink"
+              >
                 <img src={linkedinImg} alt="linkedin" />
               </a>
               <img src={item.image} alt="team member" />

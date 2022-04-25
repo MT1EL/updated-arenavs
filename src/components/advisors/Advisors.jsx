@@ -18,7 +18,12 @@ function Advisors({ setSelected }) {
             data-aos-delay={index * 100}
           >
             <div className="Team__image">
-              <a href={item.link} target="_blank" className="linkedinLink">
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className="linkedinLink"
+              >
                 <img
                   src={item.name === "HANIFF KNIGHT" ? twitterImg : linkedinImg}
                   alt="linkedin"

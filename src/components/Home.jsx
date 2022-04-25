@@ -58,6 +58,7 @@ function Home({ setIsVisible, setSelected }) {
           <a
             href="https://apps.apple.com/us/app/arena-master/id1527871139"
             target="_blank"
+            rel="noreferrer"
             className="appleStore"
           >
             <img src="https://arenavs.com/images/ml1.png" alt="apple store" />
@@ -65,6 +66,7 @@ function Home({ setIsVisible, setSelected }) {
           <a
             href="https://play.google.com/store/apps/details?id=com.Sambrela.ArenaMaster&hl=en&gl=US"
             target="_blank"
+            rel="noreferrer"
             className="appStore"
           >
             <img src="https://arenavs.com/images/ml2.png" alt="app store" />
