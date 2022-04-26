@@ -5,7 +5,10 @@ function Team({ setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
     // const [entry] = entries;
-    if (entries[0].boundingClientRect.top > 0) {
+    // if (entries[0].boundingClientRect.top > 0) {
+    //   setSelected("OUR TEAM");
+    // }
+    if (entries[0].isIntersecting) {
       setSelected("OUR TEAM");
     }
   };

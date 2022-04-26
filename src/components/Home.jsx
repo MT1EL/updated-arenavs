@@ -11,6 +11,8 @@ function Home({ setIsVisible, setSelected }) {
     // console.log(entries[0]);
     if (entries[0].boundingClientRect.top > 0) {
       setIsVisible(entries[0].isIntersecting);
+    }
+    if (entries[0].isIntersecting) {
       setSelected("HOME");
     }
   };

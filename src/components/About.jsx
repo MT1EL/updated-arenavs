@@ -25,7 +25,10 @@ function About({ setSelected }) {
   const callbackFunction = (entries) => {
     // const [entry] = entries;
 
-    if (entries[0].boundingClientRect.top > 0) {
+    // if (entries[0].boundingClientRect.top > 0) {
+    //   setSelected("ABOUT US");
+    // }
+    if (entries[0].isIntersecting) {
       setSelected("ABOUT US");
     }
   };

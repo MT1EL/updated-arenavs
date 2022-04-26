@@ -15,7 +15,10 @@ function Sponsors({ setSelected }) {
 
   const callbackFunction = (entries) => {
     // const [entry] = entries;
-    if (entries[0].boundingClientRect.top > 0) {
+    // if (entries[0].boundingClientRect.top > 0) {
+    //   setSelected("PARTNERS");
+    // }
+    if (entries[0].isIntersecting) {
       setSelected("PARTNERS");
     }
   };

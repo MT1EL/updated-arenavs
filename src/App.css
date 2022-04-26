@@ -1189,6 +1189,9 @@ tbody tr:hover td {
     font-size: 1.2em;
     font-weight: 700;
   }
+  .tableDiv {
+    overflow-x: hidden;
+  }
 }
 
 /* ==========

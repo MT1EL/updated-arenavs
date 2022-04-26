@@ -6,7 +6,10 @@ function Roadmap({ setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
     // const [entry] = entries;
-    if (entries[0].boundingClientRect.top > 0) {
+    // if (entries[0].boundingClientRect.top > 0) {
+    //   setSelected("ROADMAP");
+    // }
+    if (entries[0].isIntersecting) {
       setSelected("ROADMAP");
     }
   };
