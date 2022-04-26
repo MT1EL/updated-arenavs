@@ -5,8 +5,8 @@ import image2 from "../images/contentbg_right.png";
 function Roadmap({ setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
-    const [entry] = entries;
-    if (entry.boundingClientRect.top > 0) {
+    // const [entry] = entries;
+    if (entries[0].boundingClientRect.top > 0) {
       setSelected("ROADMAP");
     }
   };
@@ -20,7 +20,7 @@ function Roadmap({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 

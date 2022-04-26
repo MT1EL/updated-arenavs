@@ -4,9 +4,8 @@ import linkedinImg from "../team/teamImages/in.png";
 function Team({ setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
-    const [entry] = entries;
-    console.log(entry);
-    if (entry.boundingClientRect.top > 0) {
+    // const [entry] = entries;
+    if (entries[0].boundingClientRect.top > 0) {
       setSelected("OUR TEAM");
     }
   };
@@ -20,7 +19,7 @@ function Team({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 
@@ -34,7 +33,8 @@ function Team({ setSelected }) {
         <p className="team">TEAM</p>
         <div className="Team__bottom__title">OUR TEAM</div>
       </div>
-      <div className="Teamgrid" ref={targetRef}>
+      <div className="Teamgrid">
+        {/* ref={targetRef} */}
         {TeamData.map((item, index) => (
           <div
             className="card"

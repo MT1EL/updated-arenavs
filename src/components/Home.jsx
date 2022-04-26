@@ -6,10 +6,11 @@ import mainRight from ".//images/mainright.png";
 function Home({ setIsVisible, setSelected }) {
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
-    const [entry] = entries;
-    console.log(entry);
-    if (entry.boundingClientRect.top > 0) {
-      setIsVisible(entry.isIntersecting);
+    // const [entry] = entries;
+    // console.log(entry);
+    // console.log(entries[0]);
+    if (entries[0].boundingClientRect.top > 0) {
+      setIsVisible(entries[0].isIntersecting);
       setSelected("HOME");
     }
   };
@@ -23,7 +24,7 @@ function Home({ setIsVisible, setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 
@@ -39,7 +40,7 @@ function Home({ setIsVisible, setSelected }) {
           <img src={mainLeft} alt="" />
         </div>
       </div>
-      <div className=" mainImg mainRight">
+      <div className="mainImg mainRight">
         <div className="scale ">
           <img src={mainRight} alt="" />
         </div>

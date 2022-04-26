@@ -6,7 +6,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faMedium } from "@fortawesome/free-brands-svg-icons";
 import img from "../components/images/mainright.png";
-function Footer({ setSelected }) {
+function Footer() {
   return (
     <section className="Footer">
       <div className="f__container">

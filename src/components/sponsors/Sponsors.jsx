@@ -14,9 +14,8 @@ function Sponsors({ setSelected }) {
   const targetRef = useRef(null);
 
   const callbackFunction = (entries) => {
-    const [entry] = entries;
-    console.log(entry);
-    if (entry.boundingClientRect.top > 0) {
+    // const [entry] = entries;
+    if (entries[0].boundingClientRect.top > 0) {
       setSelected("PARTNERS");
     }
   };
@@ -30,7 +29,7 @@ function Sponsors({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 
@@ -59,8 +58,8 @@ function Sponsors({ setSelected }) {
       <div className="sponsorsGrid">
         {sponsors.map((item, index) => (
           <div
+            key={index}
             className="card"
-            key={item.name}
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >

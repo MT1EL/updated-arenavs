@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function Navbar({ isVisible, selected, setSelected }) {
+function Navbar({ isVisible, setSelected, selected }) {
   const [showLinks, setShowLinks] = useState(false);
+
   const links = [
     { link: "HOME", id: "#HOME" },
     { link: "ABOUT US", id: "#ABOUT" },

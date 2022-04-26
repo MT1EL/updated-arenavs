@@ -23,9 +23,9 @@ function About({ setSelected }) {
 
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
-    const [entry] = entries;
+    // const [entry] = entries;
 
-    if (entry.boundingClientRect.top > 0) {
+    if (entries[0].boundingClientRect.top > 0) {
       setSelected("ABOUT US");
     }
   };
@@ -39,7 +39,7 @@ function About({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 
@@ -107,18 +107,6 @@ function About({ setSelected }) {
       <div className="flexRow">
         <div className="titleSide" data-aos="fade-right">
           <div className="about__Title">
-            {/* <div className="svgDiv">
-              <svg
-                width="207px"
-                height="100px"
-                style={{ marginInline: "auto" }}
-              >
-                <text x="0" y="55" className="Top__title">
-                  ABOUT US
-                </text>
-              </svg>
-            </div>
-            */}
             <p className="TOKENS">ABOUT US</p>
 
             <div className="bottom__title">arena master</div>
@@ -167,11 +155,6 @@ function About({ setSelected }) {
       </div>
       <div className="tokens">
         <div className="tokensTitle">
-          {/* <svg width="50" height="50" className="svg">
-            <text x="0" y="70" className="svgText">
-              TOKENS
-            </text>
-          </svg> */}
           <p className="TOKENS">TOKENS</p>
           <div className="tokens__bottom__title">AMT TOKEN UTILITY</div>
         </div>
@@ -179,7 +162,10 @@ function About({ setSelected }) {
       <div className="tokensContent">
         {Data.map((item, index) => {
           return (
-            <div data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
+            <div
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              key={index}
+            >
               <div key={index} className="token__card">
                 <img
                   src={item.background}

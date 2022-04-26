@@ -15,8 +15,8 @@ function Tokenomics({ setSelected }) {
 
   const targetRef = useRef(null);
   const callbackFunction = (entries) => {
-    const [entry] = entries;
-    if (entry.boundingClientRect.top > 0) {
+    // const [entry] = entries;
+    if (entries[0].boundingClientRect.top > 0) {
       setSelected("TOKENOMICS");
     }
   };
@@ -30,7 +30,7 @@ function Tokenomics({ setSelected }) {
   }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction(), options);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) observer.observe(currentTarget);
 
@@ -45,51 +45,53 @@ function Tokenomics({ setSelected }) {
         <div className="WhitePaper__bottom__title">TOKEN ECONOMICS</div>
       </div>
       <div className="wholePage">
-        <table>
-          <thead>
-            <tr>
-              <td></td>
-              <th>POOL</th>
-              <th>AMT PRICE</th>
-              <th>RAISED</th>
-              <th>%</th>
-              <th>TOKENS</th>
-              <td></td>
-            </tr>
-          </thead>
-          <tbody>
-            {TokenData.map((item) => {
-              return (
-                <tr
-                  key={item.pool}
-                  className={hovered === item ? "row hovered " : "row"}
-                  onMouseEnter={() => setHovered(item)}
-                  onMouseLeave={() => setHovered({ pool: "$AMT" })}
-                >
-                  <td></td>
-                  <td>{item.pool}</td>
-                  <td>{item.price}</td>
-                  <td>{item.raised}</td>
-                  <td>{item.procent}</td>
-                  <td>{item.tokens}</td>
-                  <td></td>
-                </tr>
-              );
-            })}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td></td>
+        <div className="tableDiv">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th>POOL</th>
+                <th>AMT PRICE</th>
+                <th>RAISED</th>
+                <th>%</th>
+                <th>TOKENS</th>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              {TokenData.map((item) => {
+                return (
+                  <tr
+                    key={item.pool}
+                    className={hovered === item ? "row hovered " : "row"}
+                    onMouseEnter={() => setHovered(item)}
+                    onMouseLeave={() => setHovered({ pool: "$AMT" })}
+                  >
+                    <td></td>
+                    <td>{item.pool}</td>
+                    <td>{item.price}</td>
+                    <td>{item.raised}</td>
+                    <td>{item.procent}</td>
+                    <td>{item.tokens}</td>
+                    <td></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
 
-              <th>TOTAL</th>
-              <th></th>
-              <th>$1.032,480</th>
-              <th>100</th>
-              <th>100 000 000 </th>
-              <td></td>
-            </tr>
-          </tfoot>
-        </table>
+                <th>TOTAL</th>
+                <th></th>
+                <th>$1.032,480</th>
+                <th>100</th>
+                <th>100 000 000 </th>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
         <div className="svgContainer">
           <svg width={width} height={height}>
             <Group top={half} left={half}>
@@ -109,7 +111,7 @@ function Tokenomics({ setSelected }) {
                       <g
                         key={arc.data.pool}
                         fill={arc.data.color}
-                        className={hovered === arc.data && "hovered"}
+                        className={hovered === arc.data ? "hovered" : ""}
                       >
                         <path
                           d={pie.path(arc)}

@@ -7,7 +7,7 @@ body {
   padding: 0em;
   margin: 0em;
   font-family: "Karla", sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background: linear-gradient(180deg, #031321 0%, #021e34 100%);
   color: white;
   position: relative;
@@ -113,6 +113,7 @@ img {
     opacity: 1;
   }
 }
+
 .link:hover {
   border-color: #ff1c5e;
   transition: 300ms ease;
@@ -130,7 +131,7 @@ img {
   align-items: center;
   overflow-x: hidden;
   cursor: pointer;
-  margin-right: 1em;
+  margin-right: 2em;
 }
 .burger span,
 .close span {
@@ -1114,9 +1115,10 @@ table {
   margin: auto;
   border-collapse: collapse;
 }
-.table__container {
+.tableDiv {
   overflow-x: scroll;
 }
+
 th {
   text-align: start;
 }

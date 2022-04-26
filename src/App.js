@@ -12,20 +12,20 @@ import { useState } from "react";
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [selected, setSelected] = useState("HOME");
-  console.log(selected);
+
   return (
-    <div className="App" isVisible={isVisible}>
+    <div className="App">
       <Navbar
         isVisible={isVisible}
-        selected={selected}
         setSelected={setSelected}
+        selected={selected}
       />
       <Home setIsVisible={setIsVisible} setSelected={setSelected} />
       <About setSelected={setSelected} />
       <Roadmap setSelected={setSelected} />
       <Tokenomics setSelected={setSelected} />
       <Team setSelected={setSelected} />
-      <Advisors setSelected={setSelected} />
+      <Advisors />
       <Sponsors setSelected={setSelected} />
       <Footer setSelected={setSelected} />
     </div>

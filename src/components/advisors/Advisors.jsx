@@ -2,7 +2,7 @@ import React from "react";
 import { AdvisorData } from "./advisorsData";
 import linkedinImg from "../team/teamImages/in.png";
 import twitterImg from "../advisors/advisorImages/twitter.png";
-function Advisors({ setSelected }) {
+function Advisors() {
   return (
     <section className="TEAM">
       <div className="team__title">
